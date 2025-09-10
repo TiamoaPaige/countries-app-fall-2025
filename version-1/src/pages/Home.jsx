@@ -1,7 +1,7 @@
 // pages/Home.jsx
 import { useEffect, useState } from "react";
 import CountryCard from "../components/CountryCard";
-import "./App.css";
+
 export default function Home({ countriesData }) {
   const [countries, setCountries] = useState([]);
   useEffect(() => {
