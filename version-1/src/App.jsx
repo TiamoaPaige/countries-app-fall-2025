@@ -5,7 +5,7 @@ import SavedCountries from "./pages/SavedCountries.jsx";
 import localData from "../localData.js";
 import "./App.css";
 function App() {
-  console.log(localData, "LOCAL DATA");
+  // console.log(localData, "LOCAL DATA");
   return (
     <div>
       <header className="header">
@@ -18,7 +18,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home countriesData={localData} />} />
         <Route path="/SavedCountries" element={<SavedCountries />} />
-        <Route path="/CountryDetail" element={<CountryDetail />} />
+        <Route path="/CountryDetail/:countyName" element={<CountryDetail />} />
       </Routes>
     </div>
   );
