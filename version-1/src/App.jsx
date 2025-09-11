@@ -7,8 +7,10 @@ import { useState, useEffect } from "react";
 import "./App.css";
 
 function App() {
+  //declared countries and setter function with empty array so no default value is presented here because I am going to
   const [countries, setCountries] = useState([]);
 
+  // useEffect arrow fuction this fuction should take effect on render
   useEffect(() => {
     const getCountriesAsyncAwait = async () => {
       try {
@@ -16,13 +18,13 @@ function App() {
           "https://restcountries.com/v3.1/all?fields=name,flags,population,capital,region,cca3,borders"
         );
         const data = await response.json();
-        console.log(data);
+
         setCountries(data);
       } catch (error) {
         console.log("Error: " + error.message);
       }
     };
-    getCountriesAsyncAwait();
+    getCountriesAsyncAwait(countries);
   }, []);
 
   // console.log(localData, "LOCAL DATA");

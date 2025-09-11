@@ -1,5 +1,5 @@
 // pages/SavedCountries.jsx
-
+//this is my coded form it is not fully funtioning
 function SavedCountries() {
   return (
     <>
@@ -8,6 +8,7 @@ function SavedCountries() {
       </div>
       <form className="contact-form">
         <div className="form-group">
+          {/* name */}
           <label htmlFor="name" className="form-label">
             Name:
           </label>
@@ -22,6 +23,7 @@ function SavedCountries() {
           />
         </div>
         <div className="form-group">
+          {/* email */}
           <label htmlFor="email" className="form-label">
             Email Address:
           </label>
@@ -37,6 +39,7 @@ function SavedCountries() {
         </div>
       </form>
       <div className="form-group">
+        {/* country input text */}
         <label htmlFor="countryName" className="form-label">
           Country:
         </label>
@@ -51,6 +54,7 @@ function SavedCountries() {
         />
       </div>
       <div className="form-group">
+        {/* textarea for bio */}
         <label htmlFor="bio" className="form-label">
           Bio:
         </label>
@@ -64,6 +68,7 @@ function SavedCountries() {
           required
         />
       </div>
+      {/* submit button */}
       <button type="submit" className="form-button">
         Submit
       </button>
