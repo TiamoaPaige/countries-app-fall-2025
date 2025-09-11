@@ -10,9 +10,8 @@ function CountryCard({ country }) {
       <Link to={`/country/${country.name.common}`}>
         {/* above link to countrydetails page  */}
 
-        <div className="CountryCard">...</div>
+        <div className="CountryCard"></div>
       </Link>
-      {/* ))} */}
       {/* dot notation for countries data */}
       <img
         src={country.flags.png}
@@ -23,7 +22,6 @@ function CountryCard({ country }) {
       <p>Population: {country.population}</p>
       <p>Capital: {country.capital}</p>
       <p>Region: {country.region}</p>
-      );
     </div>
   );
 }
