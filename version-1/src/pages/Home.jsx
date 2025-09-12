@@ -1,7 +1,9 @@
 // pages/Home.jsx
+import { useParams } from "react-router";
 import "../App.css";
 import CountryCard from "../components/CountryCard";
 //imports for App.css and CountryCard for components
+
 function Home({ countriesData }) {
   // function Home with a prop of countriesData
 
@@ -16,6 +18,11 @@ function Home({ countriesData }) {
           <CountryCard key={index} country={item} />
         ))}
       </div>
+      <section
+        key={countriesData}
+        onClick={() => navigate(`/countrydetail/${cca2.toLowerCase()}`, {})}
+      ></section>
+      ;
     </>
   );
 }

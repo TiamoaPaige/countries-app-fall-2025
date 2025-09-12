@@ -5,32 +5,36 @@ import SavedCountries from "./pages/SavedCountries.jsx";
 import localData from "../localData.js";
 import { useState, useEffect } from "react";
 import "./App.css";
-
+const url =
+  "https://restcountries.com/v3.1/all?fields=name,flags,population,capital,region,cca3,borders";
 function App() {
-  //declared countries and setter function with empty array so no default value is presented here because I am going to
   const [countries, setCountries] = useState([]);
-
-  // useEffect arrow fuction this fuction should take effect on render
+  const [searchBar, setSearchBar] = useState("");
   useEffect(() => {
-    const getCountriesAsyncAwait = async () => {
-      try {
-        const response = await fetch(
-          "https://restcountries.com/v3.1/all?fields=name,flags,population,capital,region,cca3,borders"
-        );
-        const data = await response.json();
-
-        setCountries(data);
-      } catch (error) {
-        console.log("Error: " + error.message);
-      }
-    };
-    getCountriesAsyncAwait(countries);
+    fetchCountries();
   }, []);
 
-  // console.log(localData, "LOCAL DATA");
+  const fetchCountries = async () => {
+    try {
+      const response = await fetch(url);
+      const data = await response.json();
+      if (data) {
+        setCountries(data);
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  const filterCountries = countries.filter((country) =>
+    country.name.common.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+  // console.log(countries, "countries");
 
   return (
     <div>
+      <section>
+        <SearchBar />
+      </section>
       <header className="header">
         <nav>
           <Link to="/">Where in the world?</Link>

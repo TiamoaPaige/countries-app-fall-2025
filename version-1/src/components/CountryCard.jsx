@@ -19,9 +19,15 @@ function CountryCard({ country }) {
         className="flagImage"
       />
       <h2>{country.name.common}</h2>
-      <p>Population: {country.population}</p>
-      <p>Capital: {country.capital}</p>
-      <p>Region: {country.region}</p>
+      <p>Population: {country.population.toLocaleString()}</p>
+      <p>
+        <strong>Capital:</strong>
+        {country.capital}
+      </p>
+      <p>
+        <strong>Region:</strong>
+        {country.region}
+      </p>
     </div>
   );
 }
