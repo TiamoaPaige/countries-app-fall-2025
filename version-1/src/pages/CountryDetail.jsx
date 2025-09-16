@@ -3,17 +3,25 @@ import React from "react";
 import { useParams } from "react-router";
 import CountryCard from "../components/CountryCard";
 // funtion CountryDetail prop of country
-function CountryDetail({ countries, fetchCountries }) {
+// Find the country that matches the countryName
+function CountryDetail({ countries }) {
+  const { countryName } = useParams();
+  const country = countries.find((c) => c.name.commons === countryName);
+  // Check if country exists
+  if (!country) {
+    return <div>Country not found!</div>;
+  }
   return (
     <>
       {/* useParams declaration */}
-      {/* const countryName = useParams(CountryDetail).countryName; */}
+
       <div>
         {/* Country Detail */}
         <h1>Country Detail</h1>
         {/* Your country detail content here */}
         <div className="countryCard">
           {/* Rendering CountryCard Jsx */}
+          <CountryCard />
           <img
             src={countries.flag}
             alt={`Flag of ${countries.name.commons} `}

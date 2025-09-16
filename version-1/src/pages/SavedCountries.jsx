@@ -1,13 +1,15 @@
 // pages/SavedCountries.jsx
-//this is my coded form it is not fully funtioning
+import "../SavedCountries.css";
+
+// my coded form it is not fully funtioning
 function SavedCountries() {
   return (
     <>
-      
-      <div>
-        <h1>My Countries</h1>;
-      </div>
-      <form className="contact-form">
+      <form>
+        <div>
+          <h1>My Countries</h1>
+        </div>
+
         <div className="form-group">
           {/* name */}
           <label htmlFor="name" className="form-label">
@@ -38,41 +40,42 @@ function SavedCountries() {
             required
           />
         </div>
+
+        <div className="form-group">
+          {/* country input text */}
+          <label htmlFor="countryName" className="form-label">
+            Country:
+          </label>
+          <input
+            id="countryName"
+            type="text"
+            name="countryName"
+            className="form-input"
+            // value={formData.countryName}
+            // onChange={handleChange}
+            required
+          />
+        </div>
+        <div className="form-group">
+          {/* textarea for bio */}
+          <label htmlFor="bio" className="form-label">
+            Bio:
+          </label>
+          <textarea
+            id="bio"
+            name="bio"
+            className="form-textarea"
+            rows="4"
+            // value={formData.bio}
+            // onChange={handleChange}
+            required
+          />
+        </div>
+        {/* submit button */}
+        <button type="submit" className="form-button">
+          Submit
+        </button>
       </form>
-      <div className="form-group">
-        {/* country input text */}
-        <label htmlFor="countryName" className="form-label">
-          Country:
-        </label>
-        <input
-          id="countryName"
-          type="text"
-          name="countryName"
-          className="form-input"
-          // value={formData.countryName}
-          // onChange={handleChange}
-          required
-        />
-      </div>
-      <div className="form-group">
-        {/* textarea for bio */}
-        <label htmlFor="bio" className="form-label">
-          Bio:
-        </label>
-        <textarea
-          id="bio"
-          name="bio"
-          className="form-textarea"
-          rows="4"
-          // value={formData.bio}
-          // onChange={handleChange}
-          required
-        />
-      </div>
-      {/* submit button */}
-      <button type="submit" className="form-button">
-        Submit
-      </button>
     </>
   );
 }

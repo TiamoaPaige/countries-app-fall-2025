@@ -1,12 +1,13 @@
 //import link selector for  my dynamic link
+import "../CountryCard.css";
 import { Link } from "react-router-dom";
-//this page has prop
+//import for link
 function CountryCard({ country }) {
   //dynamic link card click select
   //imported CountryCard with prop of country
 
   return (
-    <Link to={`/country/${country.name.commons}`}>
+    <Link to={`/country-detail/${country.name.common}`}>
       {/* above link to countrydetails page  */}
 
       <div>
@@ -16,7 +17,7 @@ function CountryCard({ country }) {
 
         {/* dot notation for countries data */}
         <img
-          src={country.flags.png}
+          src={country.flags.svg}
           alt={`Flag of ${country.name.common}`}
           className="flagImage"
         />
